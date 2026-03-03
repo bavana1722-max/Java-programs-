@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class ElectricityBill {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int choice = 1;
+
+        while (choice == 1) {
+            System.out.print("Enter units consumed: ");
+            int units = sc.nextInt();
+
+            double bill = units * 5;  // ₹5 per unit
+
+            System.out.println("Bill Amount: " + bill);
+
+            System.out.print("Process next customer? (1=Yes, 0=No): ");
+            choice = sc.nextInt();
+        }
+
+        sc.close();
+    }
+}
