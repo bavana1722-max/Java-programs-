@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+class Vehicle {
+    void fuelType() {
+        System.out.println("Unknown Fuel");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    void fuelType() {
+        System.out.println("Petrol");
+    }
+}
+
+public class VehicleTest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter vehicle type (Car): ");
+        String type = sc.nextLine();
+
+        Vehicle v;
+
+        if (type.equalsIgnoreCase("Car")) {
+            v = new Car();
+        } else {
+            v = new Vehicle();
+        }
+
+        v.fuelType();
+    }
+}
