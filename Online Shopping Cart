@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class Cart {
+    double itemPrice;
+    int quantity;
+
+    Cart(double itemPrice, int quantity) {
+        this.itemPrice = itemPrice;
+        this.quantity = quantity;
+    }
+
+    void calculateTotal() {
+        double total = itemPrice * quantity;
+
+        if (total > 5000) {
+            total = total - (total * 0.10);
+        }
+
+        System.out.println("Total Cost: " + total);
+    }
+}
+
+public class OnlineShopping {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Item Price: ");
+        double price = sc.nextDouble();
+
+        System.out.print("Enter Quantity: ");
+        int qty = sc.nextInt();
+
+        Cart c = new Cart(price, qty);
+        c.calculateTotal();
+    }
+}
