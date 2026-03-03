@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+class Shape {
+    void area() {
+        System.out.println("Area not defined");
+    }
+}
+
+class Rectangle extends Shape {
+    int length, breadth;
+
+    Rectangle(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+
+    void area() {
+        System.out.println("Area: " + (length * breadth));
+    }
+}
+
+class Circle extends Shape {
+    double radius;
+
+    Circle(double r) {
+        radius = r;
+    }
+
+    void area() {
+        System.out.println("Area: " + (3.14 * radius * radius));
+    }
+}
+
+public class ShapeTest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Shape (Rectangle/Circle): ");
+        String choice = sc.nextLine();
+
+        if (choice.equalsIgnoreCase("Rectangle")) {
+            System.out.print("Enter length: ");
+            int l = sc.nextInt();
+            System.out.print("Enter breadth: ");
+            int b = sc.nextInt();
+
+            Shape s = new Rectangle(l, b);
+            s.area();
+        } else if (choice.equalsIgnoreCase("Circle")) {
+            System.out.print("Enter radius: ");
+            double r = sc.nextDouble();
+
+            Shape s = new Circle(r);
+            s.area();
+        } else {
+            System.out.println("Invalid Shape");
+        }
+    }
+}
