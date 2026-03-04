@@ -1,0 +1,27 @@
+class Product {
+    String name;
+    double price;
+
+    Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+}
+
+public class Shopping {
+    public static void main(String[] args) {
+        try {
+            Product p = new Product("Laptop", -50000);
+
+            if (p.price < 0) {
+                throw new IllegalArgumentException("Invalid Price!");
+            }
+
+            System.out.println("Product: " + p.name);
+            System.out.println("Price: " + p.price);
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
